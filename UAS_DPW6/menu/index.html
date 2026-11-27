@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIMOR Marketplace</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <span>UNIMOR</span> MARKETPLACE
+        </div>
+
+        <nav>
+            <a href="#beranda">Beranda</a>
+            <a href="#produk">Produk</a>
+            <a href="#kategori">Kategori</a>
+            <a href="#tentang">Tentang</a>
+        </nav>
+
+        <div class="header-actions">
+            <button onclick="lihatKeranjang()">
+                🛒 Keranjang (<span id="jumlahKeranjang">0</span>)
+            </button>
+
+            <button class="login-btn" onclick="bukaLogin()">
+                Login
+            </button>
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="beranda">
+        <div class="hero-content">
+
+            <h1>
+                Marketplace Digital<br>
+                Mahasiswa UNIMOR
+            </h1>
+
+            <p>
+                Temukan berbagai produk dan jasa kreatif mahasiswa
+                Universitas Timor dalam satu platform.
+            </p>
+
+            <a href="#produk" class="hero-btn">
+                Mulai Belanja
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- SEARCH -->
+    <section class="search-section">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Cari produk yang kamu inginkan..."
+        >
+
+        <button onclick="cariProduk()">
+            Cari
+        </button>
+
+    </section>
+
+
+    <!-- KATEGORI -->
+    <section class="container" id="kategori">
+
+        <h2>Kategori Produk</h2>
+
+        <div class="categories">
+
+            <button onclick="filterKategori('Semua')">
+                Semua
+            </button>
+
+            <button onclick="filterKategori('Makanan')">
+                🍔 Makanan
+            </button>
+
+            <button onclick="filterKategori('Fashion')">
+                👕 Fashion
+            </button>
+
+            <button onclick="filterKategori('Elektronik')">
+                💻 Elektronik
+            </button>
+
+            <button onclick="filterKategori('Buku')">
+                📚 Buku
+            </button>
+
+            <button onclick="filterKategori('Jasa')">
+                🛠️ Jasa
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUK -->
+    <section class="container" id="produk">
+
+        <h2>Produk Pilihan Mahasiswa</h2>
+
+        <p class="subtitle">
+            Temukan produk terbaik dari mahasiswa UNIMOR.
+        </p>
+
+        <div class="product-list" id="productList">
+
+            <!-- PRODUK 1 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img src="../image/nasgor.webp"
+                         alt="Nasi Goreng">
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">Makanan</span>
+
+                    <h3>Nasi Goreng</h3>
+
+                    <p>Nasi goreng spesial buatan mahasiswa.</p>
+
+                    <h4>Rp 15.000</h4>
+
+                    <button onclick="tambahKeranjang(1)">
+                        + Tambah ke Keranjang
+                    </button>
+
+                </div>
+            </div>
+
+
+            <!-- PRODUK 2 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img src="../image/roti.jpg"
+                         alt="Roti Bakar">
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">Makanan</span>
+
+                    <h3>Roti Bakar</h3>
+
+                    <p>Roti bakar dengan berbagai varian rasa.</p>
+
+                    <h4>Rp 12.000</h4>
+
+                    <button onclick="tambahKeranjang(2)">
+                        + Tambah ke Keranjang
+                    </button>
+
+                </div>
+            </div>
+
+
+
+            <!-- PRODUK 3 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img src="../image/kaos.webp"
+                         alt="Kaos UNIMOR">
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">Fashion</span>
+
+                    <h3>Kaos UNIMOR</h3>
+
+                    <p>Kaos keren dengan desain UNIMOR.</p>
+
+                    <h4>Rp 75.000</h4>
+
+                    <button onclick="tambahKeranjang(3)">
+                        + Tambah ke Keranjang
+                    </button>
+
+                </div>
+            </div>
+
+
+            <!-- PRODUK 4 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img src="../image/tas.jpg"
+                         alt="Tas Kuliah">
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">Fashion</span>
+
+                    <h3>Tas Kuliah</h3>
+
+                    <p>Tas untuk kebutuhan perkuliahan.</p>
+
+                    <h4>Rp 65.000</h4>
+
+                    <button onclick="tambahKeranjang(4)">
+                        + Tambah ke Keranjang
+                    </button>
+
+                </div>
+            </div>
+
+
+            <!-- PRODUK 5 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img src="../image/earphone.jpg"
+                         alt="Earphone">
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">Elektronik</span>
+
+                    <h3>Headset</h3>
+
+                    <p>Headset untuk belajar dan hiburan.</p>
+
+                    <h4>Rp 85.000</h4>
+
+                    <button onclick="tambahKeranjang(5)">
+                        + Tambah ke Keranjang
+                    </button>
+
+                </div>
+            </div>
+
+
+            <!-- PRODUK 6 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img src="../image/flasdisk.webp"
+                         alt="Flashdisk">
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">Elektronik</span>
+
+                    <h3>Flashdisk</h3>
+
+                    <p>Flashdisk untuk menyimpan file.</p>
+
+                    <h4>Rp 45.000</h4>
+
+                    <button onclick="tambahKeranjang(6)">
+                        + Tambah ke Keranjang
+                    </button>
+
+                </div>
+            </div>
+
+
+            <!-- PRODUK 7 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img src="../image/bukumySQL.jpg"
+                         alt="Buku Pemrograman">
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">Buku</span>
+
+                    <h3>Buku Pemrograman</h3>
+
+                    <p>Buku pembelajaran pemrograman.</p>
+
+                    <h4>Rp 50.000</h4>
+
+                    <button onclick="tambahKeranjang(7)">
+                        + Tambah ke Keranjang
+                    </button>
+
+                </div>
+            </div>
+
+
+            <!-- PRODUK 8 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img src="../image/ftoJasaDesain.webp"
+                         alt="Jasa Desain Grafis">
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">Jasa</span>
+
+                    <h3>Jasa Desain Grafis</h3>
+
+                    <p>Melayani desain poster dan logo.</p>
+
+                    <h4>Rp 30.000</h4>
+
+                    <button onclick="tambahKeranjang(8)">
+                        + Tambah ke Keranjang
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TENTANG -->
+    <section class="about" id="tentang">
+
+        <h2>Tentang UNIMOR Marketplace</h2>
+
+        <p>
+            UNIMOR Marketplace merupakan platform digital yang dirancang
+            untuk membantu mahasiswa Universitas Timor memasarkan produk
+            dan jasa, serta mempermudah transaksi jual beli di lingkungan kampus.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h3>UNIMOR MARKETPLACE</h3>
+
+        <p>
+            Platform Digital Jual Beli Mahasiswa Universitas Timor
+        </p>
+
+        <p>
+            &copy; 2026 UNIMOR Marketplace
+        </p>
+
+    </footer>
+
+
+    <!-- MODAL KERANJANG -->
+    <div class="modal" id="cartModal">
+
+        <div class="modal-content">
+
+            <button class="close"
+                onclick="tutupModal('cartModal')">
+                ✕
+            </button>
+
+            <h2>Keranjang Belanja</h2>
+
+            <div id="cartItems"></div>
+
+            <h3 id="totalHarga">Total: Rp0</h3>
+
+            <button class="checkout-btn" onclick="checkout()">
+                Pesan Sekarang
+            </button>
+
+        </div>
+
+    </div>
+
+
+   <!-- MODAL LOGIN -->
+<div class="modal" id="loginModal">
+
+    <div class="modal-content">
+
+        <button class="close"
+            onclick="tutupModal('loginModal')">
+            ✕
+        </button>
+
+        <h2>Login Mahasiswa</h2>
+
+        <input type="text"
+            id="namaLogin"
+            placeholder="Nama mahasiswa">
+
+        <input type="email"
+            id="emailLogin"
+            placeholder="Email mahasiswa">
+
+        <textarea
+            id="alamatLogin"
+            placeholder="Masukkan alamat lengkap"
+            rows="3"></textarea>
+
+        <button class="checkout-btn" onclick="login()">
+            Masuk melalui WhatsApp
+        </button>
+
+        <p id="loginStatus"></p>
+
+    </div>
+
+</div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="../javascript/script.js"></script>
+
+</body>
+</html>

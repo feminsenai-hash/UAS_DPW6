@@ -1,0 +1,569 @@
+
+/* =================================
+   RESET DAN DASAR
+================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f7fc;
+    color: #252525;
+    line-height: 1.6;
+}
+
+/* =================================
+   HEADER
+================================= */
+header {
+    width: 100%;
+    min-height: 85px;
+    background: #ffffff;
+    padding: 15px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #263d75;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #eda51d;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #eda51d;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.header-actions button {
+    border: none;
+    padding: 12px 17px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #263d75;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.header-actions button:hover {
+    background: #405b9c;
+}
+
+.header-actions .login-btn {
+    background: #eda51d;
+    color: #222;
+}
+
+/* =================================
+   HERO / BERANDA
+================================= */
+.hero {
+    min-height: 430px;
+    background:
+        linear-gradient(
+            rgba(20, 39, 83, 0.78),
+            rgba(20, 39, 83, 0.78)
+        ),
+        url("../image/gedung.jpg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 70px 9%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-content h1 {
+    font-size: 45px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #eeeeee;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: #eda51d;
+    color: #222;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+/* =================================
+   SEARCH
+================================= */
+.search-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 35px 7%;
+    background: white;
+}
+
+.search-section input {
+    width: 60%;
+    max-width: 650px;
+    padding: 16px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-section input:focus {
+    border-color: #263d75;
+}
+
+.search-section button {
+    padding: 16px 28px;
+    border: none;
+    background: #263d75;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search-section button:hover {
+    background: #eda51d;
+    color: #222;
+}
+
+/* =================================
+   CONTAINER
+================================= */
+.container {
+    width: 88%;
+    max-width: 1400px;
+    margin: auto;
+    padding-top: 55px;
+    padding-bottom: 30px;
+}
+
+.container h2 {
+    font-size: 30px;
+    color: #263d75;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    color: #777;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* =================================
+   KATEGORI
+================================= */
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.categories button {
+    padding: 14px 25px;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    background: white;
+    color: #333;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.categories button:hover {
+    background: #263d75;
+    color: white;
+    border-color: #263d75;
+}
+
+/* =================================
+   DAFTAR PRODUK
+================================= */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+    padding-bottom: 55px;
+}
+
+/* =================================
+   KARTU PRODUK
+================================= */
+.product-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 9px 25px rgba(0,0,0,0.13);
+}
+
+/* =================================
+   FOTO PRODUK
+================================= */
+.product-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #edf0f6;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.06);
+}
+
+/* =================================
+   INFORMASI PRODUK
+================================= */
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.category {
+    display: inline-block;
+    width: fit-content;
+    padding: 6px 13px;
+    background: #eaf0ff;
+    color: #263d75;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.product-info h3 {
+    font-size: 19px;
+    color: #252525;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    color: #777;
+    font-size: 14px;
+    min-height: 45px;
+    margin-bottom: 12px;
+}
+
+.product-info h4 {
+    font-size: 21px;
+    color: #e69a13;
+    margin-bottom: 18px;
+}
+
+.product-info button {
+    width: 100%;
+    margin-top: auto;
+    padding: 13px 10px;
+    background: #263d75;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.product-info button:hover {
+    background: #eda51d;
+    color: #222;
+}
+
+/* =================================
+   TENTANG
+================================= */
+.about {
+    background: white;
+    text-align: center;
+    padding: 65px 10%;
+}
+
+.about h2 {
+    color: #263d75;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 850px;
+    margin: auto;
+    color: #666;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* =================================
+   FOOTER
+================================= */
+footer {
+    background: #263d75;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+footer h3 {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #e2e6f0;
+}
+
+/* =================================
+   MODAL
+================================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    width: 100%;
+    max-width: 450px;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.modal-content h2 {
+    color: #263d75;
+    margin-bottom: 22px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 23px;
+    cursor: pointer;
+    color: #555;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 14px;
+    background: #263d75;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.checkout-btn:hover {
+    background: #eda51d;
+    color: #222;
+}
+
+#cartItems {
+    margin: 20px 0;
+}
+
+#cartItems p {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+#totalHarga {
+    color: #263d75;
+    margin-top: 15px;
+}
+
+/* =================================
+   RESPONSIVE TABLET
+================================= */
+@media (max-width: 1100px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    .product-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    nav {
+        gap: 15px;
+    }
+}
+
+/* =================================
+   RESPONSIVE HP
+================================= */
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        padding: 18px;
+        gap: 18px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 350px;
+        padding: 50px 7%;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .search-section {
+        padding: 25px 5%;
+    }
+
+    .search-section input {
+        width: 75%;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .container h2 {
+        font-size: 25px;
+    }
+
+    .categories button {
+        padding: 11px 16px;
+        font-size: 13px;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .product-image {
+        height: 230px;
+    }
+
+    .about {
+        padding: 45px 7%;
+    }
+}
